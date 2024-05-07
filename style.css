@@ -1,0 +1,464 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Freight big pro';
+}
+
+:root {
+    --min-height: 20vw;
+    --max-height: 35vw;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+nav svg{
+    cursor: pointer;
+}
+.loader {
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 99;
+    /* display: none; */
+}
+
+.nav-part2 h3, .nav-part2 .icon{
+    cursor: pointer;
+}
+
+.yellow-div1 {
+    height: 100%;
+    width: 100%;
+    background-color: #f5e41b;
+    position: absolute;
+    z-index: 8;
+}
+
+.yellow-div2 {
+    height: 100%;
+    width: 100%;
+    background-color: #f5e41b;
+    position: absolute;
+    z-index: 7;
+}
+
+.loader h1 {
+    font-size: 6.9vw;
+    line-height: 5vw;
+    font-weight: 300;
+    letter-spacing: -3px;
+    position: relative;
+    z-index: 9;
+}
+
+.loader video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+}
+
+.nav {
+    position: absolute;
+    width: 100%;
+    padding: 33px 60px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3.5vw;
+}
+.nav-part2 h3:hover{
+    cursor: pointer;
+}
+.nav-part2 div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3.5vw;
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+    transition: opacity 0.3s, height 0.3s; /* Apply transition to opacity and height */
+    /* Additional styles */
+    /* background-color: #f0f0f0; */
+    padding: 10px;
+    /* margin-top: 10px; */
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin-top: 0;
+}
+
+.nav-part2 .icon img{
+    height: 2.5vw;
+    width: 2.5vw;
+}
+
+.page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #f5e41b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.page1 h1 {
+    font-size: 6.9vw;
+    line-height: 5vw;
+    font-weight: 300;
+    letter-spacing: -3px;
+}
+.page1 .page1-bottom{
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+.page1-bottom img{
+    height: 3vw;
+    width: 5vw;
+}
+
+.page2 {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    line-height: .8;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.page2 img{
+    position: absolute;
+    bottom: 3%;
+    color: #f5e41b;
+    height: 3vw;
+    width: 5vw;
+}
+.elem {
+    /* background-color: red; */
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.elem h2 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    font-weight: 200;
+    position: relative;
+    z-index: 9;
+}
+
+.elem .moving {
+    background-color: #f5e41b;
+    width: 100%;
+    white-space: nowrap;
+    padding: 8px 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%) scaleY(0);
+    transition: all ease 0.5s;
+}
+
+.blur {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to right, #f5e31be4, #f5e41b, #f5e31be4);
+    /* box-shadow: 5px 0 10px #f5e41b; */
+    z-index: 8;
+
+}
+
+.moving .moving-in {
+    /* background-color: lightgreen; */
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: moving;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.moving-in h5 {
+    color: black;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    /* background-color: #f5e41b; */
+    border: none;
+    outline: none;
+    margin-right: 30px;
+    transition: all ease 0.5s;
+    transition-delay: 0.2s;
+    opacity: 0;
+}
+
+.elem h2:hover {
+    font-style: italic;
+    color: black;
+    transition: all ease-in-out .3s;
+}
+
+.elem:hover .moving {
+    transform: translate(0, -50%) scaleY(1);
+
+}
+
+.elem:hover .moving-in h5 {
+    opacity: 1;
+}
+
+.page3 {
+    min-height: 650vh;
+    width: 100%;
+    /* background-color: whitesmoke; */
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* justify-content: center; */
+    padding: 28px;
+}
+
+.image-div {
+    /* height: 36vw; */
+    width: 30vw;
+    margin: 2vw 1vw;
+    background-color: rebeccapurple;
+    position: relative;
+    border-radius: 5px;
+    transition: all ease 0.5s;
+    overflow: hidden;
+}
+
+.image-div img {
+        height: 100%; /* Set the image height to 100% of its container */
+        width: 100%; /* Maintain aspect ratio */
+        position: absolute; /* Position the image within its container */
+        top: 0; /* Align image to top */
+        left: 0; /* Align image to left */
+    object-fit: cover;
+    transition: all ease-in-out 0.3s;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    color: whitesmoke;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+    z-index: 9;
+}
+
+.overlay p {
+    font-size: 3.4vw;
+    line-height: .8;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+
+.image-div:hover .overlay {
+    background-color: black;
+
+}
+
+.image-div:hover .overlay p {
+    opacity: 1;
+}
+
+.image-div:hover img {
+    scale: 1.1;
+}
+
+.footer {
+    height: 30vh;
+    width: 100%;
+    /* background-color: red; */
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-top {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: purple; */
+}
+
+.footer-top img {
+    height: 2.2vw;
+    width: 2.2vw;
+    cursor: pointer;
+}
+
+.footer-top h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    height: 50%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-part1 h3 {
+    margin: 3vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.bottom-part2 {
+    display: flex;
+    padding-right: 3vw;
+    gap: 3vw;
+}
+
+.bottom-part2 h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.randomHeightImgDiv {
+    min-height: var(--min-height);
+    max-height: var(--max-height);
+}
+
+.transition{
+    transition: all ease 1s;
+}
+
+
+
+
+
+
+
+
+
+.border-transition {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px; /* Adjust as needed */
+}
+
+/* Apply styles to the border */
+.border-transition::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px; /* Adjust thickness as needed */
+    background-color: black; /* Adjust color as needed */
+    transition: width 0.3s ease-in-out; /* Transition property */
+}
+
+/* Add hover effect */
+.border-transition:hover::after {
+    width: 100%; /* Set width to 100% on hover */
+}
+
+
+.bottom-transition:hover{
+    transition: all ease-in-out 0.5s;
+    scale: 1.1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes moving {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
